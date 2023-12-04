@@ -5,7 +5,7 @@ Projet-gestion-presence
 Tuto crée fichier / Dossier GitHub
 
 ## Fichier
-Pour crée un nouv eaufichier sur le dépot clique sur "Createe new file" ![Image](https://media.discordapp.net/attachments/1181099643845746750/1181099668369842277/image.png?ex=657fd3c8&is=656d5ec8&hm=602751be3cffeb4049f7fd06c78036abca260ed472f31e65c7b5f0e19e215205&=&format=webp&quality=lossless&width=363&height=200)
+Pour crée un nouv eaufichier sur le dépot clique sur "Create new file" ![Image](https://media.discordapp.net/attachments/1181099643845746750/1181099668369842277/image.png?ex=657fd3c8&is=656d5ec8&hm=602751be3cffeb4049f7fd06c78036abca260ed472f31e65c7b5f0e19e215205&=&format=webp&quality=lossless&width=363&height=200)
 
 Pour ajouter un fichier local sur le dépot clique sur "Upload File" ![Image](https://media.discordapp.net/attachments/1181099643845746750/1181099668369842277/image.png?ex=657fd3c8&is=656d5ec8&hm=602751be3cffeb4049f7fd06c78036abca260ed472f31e65c7b5f0e19e215205&=&format=webp&quality=lossless&width=363&height=200)
 ## Dossier
