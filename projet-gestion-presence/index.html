@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASPER - Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #loginContainer {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #errorMessage {
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loginContainer">
+        <h2>CASPER - Connexion</h2>
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <div id="errorMessage"></div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Vous devez implémenter ici la logique de validation avec une requête au backend.
+
+            // Exemple de vérification simple (à remplacer par la vérification du backend) :
+            if (username === "admin" && password === "MOT_DE_PASSE") {
+                // Authentification réussie, rediriger ou effectuer d'autres actions nécessaires.
+                alert("Connexion réussie !");
+                return true;
+            } else {
+                // Afficher un message d'erreur en cas d'échec de l'authentification.
+                document.getElementById('errorMessage').innerText = "Nom d'utilisateur ou mot de passe incorrect.";
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>

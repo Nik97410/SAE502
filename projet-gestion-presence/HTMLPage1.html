@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASPER - Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #loginContainer {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #errorMessage {
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loginContainer">
+        <h2>Connexion à CASPER</h2>
+        <form id="loginForm" onsubmit="return authenticateUser()">
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+
+    <div id="mainMenu" style="display: none;">
+        <h2>Menu Principal</h2>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showErrors()">Journées en erreur</a></li>
+                <li><a href="#" onclick="showChangePasswordForm()">Modifier le mot de passe</a></li>
+                <li><a href="#" onclick="showPointageInterface()">Pointage</a></li>
+                <!-- Ajoutez d'autres éléments du menu ici -->
+            </ul>
+        </nav>
+    </div>
+
+    <div id="pointageContainer" style="display: none;">
+        <h1>Badgeuse</h1>
+        <p id="badgeTime">Aucun badge enregistré.</p>
+        <button id="badgeButton">Badgez-moi</button>
+        <!-- Formulaire de pointage -->
+        <form id="pointageForm">
+            <label for="typePointage">Type de pointage :</label>
+            <select id="typePointage">
+                <option value="service">Service</option>
+                <option value="mission">Mission</option>
+            </select>
+
+            <button type="button" onclick="enregistrerPointage()">Enregistrer le pointage</button>
+        </form>
+
+        <!-- Affichage des horaires -->
+        <div id="horairesContainer">
+            <h3>Horaires</h3>
+            <!-- Affichage des horaires ici -->
+        </div>
+
+        <!-- Affichage des erreurs -->
+        <div id="erreursContainer">
+            <h3>Erreurs</h3>
+            <!-- Affichage des erreurs ici -->
+        </div>
+    </div>
+    
+
+    
+    <script>
+        function authenticateUser() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Vous devrez implémenter la logique côté serveur ici pour vérifier l'authentification.
+
+            // Pour le moment, nous supposons que l'authentification est toujours réussie.
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('mainMenu').style.display = 'block';
+            return false; // Pour éviter la soumission du formulaire
+        }
+
+        function showErrors() {
+            // Implémentez ici la logique pour afficher les journées en erreur.
+            alert("Affichage des journées en erreur");
+        }
+
+        function showChangePasswordForm() {
+            // Implémentez ici la logique pour afficher le formulaire de changement de mot de passe.
+            alert("Affichage du formulaire de changement de mot de passe");
+        }
+        function showPointageInterface() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('mainMenu').style.display = 'none';
+            document.getElementById('pointageContainer').style.display = 'block';
+
+            // Vous devrez également appeler les fonctions pour afficher les horaires et les erreurs ici.
+            afficherHoraires();
+            afficherErreurs();
+        }
+        // Fonction pour obtenir la date et l'heure actuelles
+        function getCurrentDateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            return `${date} ${time}`;
+}
+
+        // Fonction pour gérer le clic sur le bouton de badge
+        function handleBadgeButtonClick() {
+        const badgeTimeElement = document.getElementById('badgeTime');
+            const currentDateTime = getCurrentDateTime();
+            badgeTimeElement.textContent = `Dernier badge enregistré : ${currentDateTime}`;
+    }
+
+    // Ajoute un écouteur d'événements au bouton de badge
+    const badgeButton = document.getElementById('badgeButton');
+    badgeButton.addEventListener('click', handleBadgeButtonClick);
+    </script>
+
+</body>
+</html>
