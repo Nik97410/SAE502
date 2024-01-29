@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUVA Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="session">
+        <div class="left">
+          
+                <?xml version="1.0" ?>
+                <svg id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="-30 -30 550 550" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><polyline id="XMLID_5_" points="144.4,118.8 144.4,214.1 47.1,214.1  " /><g><path d="M460.1,37.4l-43-26.7c-14.7-9.1-34-4.6-43.1,10.1l-3.2,5.1L467,85.5l3.2-5.1    C479.3,65.7,474.7,46.5,460.1,37.4z" id="XMLID_4_" /><path d="M258,208l0.2,0.1c-0.4,0.6-0.6,1.3-0.7,2l-15.1,121.8c-0.2,1.9,0.7,3.8,2.3,4.9c1.7,1,3.8,1,5.4-0.1L352.5,269    c0.6-0.4,1.1-0.9,1.5-1.6l0.2,0.1L460,96.8l-96.1-59.6L258,208z M286.1,300.9l-27.8-17.2l8-64.6l74.1,46L286.1,300.9z" /></g><polygon id="XMLID_1_" points="360.6,295 354.7,291.4 341.9,299.9 341.9,486 57.1,486 57.1,214 142.4,128.7 283.6,128.7 296,108.8    134.1,108.8 37.1,205.8 37.1,506 361.8,506 361.8,292.9  " /></g></svg>
+           
+        </div>
+        <form action="#" class="log-in" autocomplete="off" id="loginForm">
+            <h4>We are <span>ADE Web Signature</span></h4>
+            <p>Welcome back! Log in to your account to checked mark for the day:</p>
+            <div class="floating-label">
+                <input placeholder="Login" type="text" name="email" id="email" autocomplete="off">
+            </div>
+            <div class="floating-label">
+                <input placeholder="Password" type="password" name="password" id="password" autocomplete="off">
+            </div>
+            <button type="button" onClick="submitForm()">Log in</button>
+        </form>
+        <script >
+        function submitForm() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Appel à l'API d'authentification (exemple simplifié avec fetch)
+    fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+    })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            // Rediriger vers une autre page ou effectuer d'autres actions en cas de succès
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            // Gérer les erreurs d'authentification ici
+        });
+}
+
+        </script>
+    </div>
+</body>
+</html>
