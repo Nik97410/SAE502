@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="container">
+    <div id="formulaireConfirmation">
+        <form action="login.php" method="post">
+            <label for="identifiant">Identifiant :</label>
+            <input type="text" id="identifiant" name="username" required>
+
+            <label for="motDePasse">Mot de passe :</label>
+            <input type="password" id="motDePasse" name="password" required>
+
+            <label for="confirmation">Statut :</label>
+            <select id="confirmation" name="confirmation" required>
+                <option value="present">Présent</option>
+                <option value="retard_5min">Retard 5min</option>
+                <option value="retard_10min">Retard 10min</option>
+            </select>
+
+            <button type="submit">Confirmer</button>
+        </form>
+
+        <button id="profButton">
+            <a href="login_prof.php" class="button-link">Professeur</a>
+        </button>
+    </div>
+</div>
+
+</body>
+</html>

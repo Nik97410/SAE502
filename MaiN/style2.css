@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #3498db; /* Couleur de fond plus vive */
+    color: #2c3e50; /* Couleur du texte ajustée */
+}
+
+#container {
+    background-color: #ecf0f1; /* Couleur de fond du conteneur */
+    padding: 60px; /* Ajustement de la taille du conteneur */
+    border-radius: 12px; /* Coins plus arrondis */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombre légère */
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out; /* Animation de fondu en entrée */
+}
+
+.success {
+    color: #27ae60; /* Couleur du texte pour succès */
+    font-size: 20px; /* Ajustement de la taille du texte de succès */
+    margin-bottom: 20px; /* Ajustement de la marge pour succès */
+}
+
+.error {
+    color: #e74c3c; /* Couleur du texte pour erreur */
+    font-size: 20px; /* Ajustement de la taille du texte d'erreur */
+    margin-bottom: 20px; /* Ajustement de la marge pour erreur */
+}
+
+.return-link {
+    display: inline-block;
+    color: #fff; /* Couleur du texte du lien de retour */
+    background-color: #3498db; /* Couleur de fond du lien de retour */
+    padding: 10px 20px; /* Ajustement de la taille du lien de retour */
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out; /* Animation de changement de couleur au survol */
+}
+
+.return-link:hover {
+    background-color: #2980b9; /* Couleur de fond du lien de retour au survol */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

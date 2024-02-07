@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #3498db;
+    color: #2c3e50;
+    font-family: 'Arial', sans-serif; /* Ajout d'une police de caractères générique */
+}
+
+#container {
+    background-color: #ecf0f1;
+    padding: 50px; /* Réduction de la taille du padding */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+form {
+    display: block; /* Changement de display en block pour le formulaire */
+    max-width: 400px; /* Limitation de la largeur du formulaire */
+    margin: 0 auto; /* Centrage horizontal du formulaire */
+}
+
+label, input, select, button {
+    margin-bottom: 15px; /* Réduction de la marge entre les éléments */
+    display: block;
+}
+
+button {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 12px 20px; /* Ajustement de la taille du bouton */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px; /* Réduction de la taille du texte du bouton */
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+#profButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.button-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px; /* Réduction de la taille du texte du lien */
+    padding: 8px 12px; /* Ajustement de la taille du lien */
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button-link:hover {
+    background-color: #27ae60;
+}
